@@ -33,9 +33,9 @@
             }
             string[] words = text.Split(new char[] { '-', '.', '?', '!', ')', '(', ',', ':', ' ' }, StringSplitOptions.RemoveEmptyEntries);
             if (words.Length > 0) { Console.WriteLine("Общее количество слов :" + words.Length); }
-            var result = words.GroupBy(x => x)
-                .Select(x => new { Word = x.Key, Repeating = x.Count()});
-                foreach (var item in result)
+            var result = words.GroupBy(x => x) // Группировка слов-элементов массива с помощью Языка Интегрированных Запросов
+                .Select(x => new { Word = x.Key, Repeating = x.Count()}); // Представление результатов в виде перечисления анонимного типа.
+            foreach (var item in result)
                 {
                     Console.WriteLine("Слово: {0}\tКоличество повторов: {1}", item.Word, item.Repeating);
                 }
