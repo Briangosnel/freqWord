@@ -8,7 +8,7 @@ public class wordsTest
     [TestMethod]
     public void TestMethod1()
     {
-        freqWord.Program.text = "test, test. test";
-
+        Program.text = "test, test test test";
+        Assert.AreEqual(4, Program.GetStringList().Length);
     }
 }
